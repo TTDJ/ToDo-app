@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Buenos días!
+                    Let's learn about our new ToDo APP!
                 </div>
 
                 <div class="links">
