@@ -79,14 +79,18 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Buenos días {{ $name }}!
+                    ¡ Vamos {{ $name }} !
                 </div>
                 <hr>
-                    <h2>What should I do today?</h2>
+                <div>
+                    <h2>We are in a hurry! So...</h2>
+                        <h3>{{ $task->body }}</h3>
+                    </ul>
+                </div>
                 <hr>
                 <div class="links">
-                    <a href="/tasks/">Summary</a>
-                    <a href="/tasks/1">What's next?</a>
+                    <a href="/">Home</a>
+                    <a href="/tasks/">What else?</a>
                 </div>
             </div>
         </div>

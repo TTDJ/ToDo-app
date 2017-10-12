@@ -79,13 +79,20 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Buenos días {{ $name }}!
+                    ¡ Hola {{ $name }} !
                 </div>
                 <hr>
-                    <h2>What should I do today?</h2>
+                <div>
+                    <h2>Be prepared! These tasks are waiting for you!</h2>
+                    <ul style="display: inline-block; text-align: left;">
+                        @foreach ($tasks as $task)
+                            <li><a href="/tasks/{{ $task->id }}">{{ $task->body }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
                 <hr>
                 <div class="links">
-                    <a href="/tasks/">Summary</a>
+                    <a href="/">Home</a>
                     <a href="/tasks/1">What's next?</a>
                 </div>
             </div>

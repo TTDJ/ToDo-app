@@ -12,7 +12,26 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $name = 'niño';
+
+    return view('welcome', compact('name'));
+});
+
+Route::get('/tasks', function () {
+
+    $name = 'chico';
+    $tasks = DB::table('tasks')->get();
+
+    return view('tasks/index', compact('name', 'tasks'));
+});
+
+Route::get('/tasks/{task}', function ($id) {
+
+    $name = 'compańero';
+    $task = DB::table('tasks')->find($id);
+
+    return view('tasks/show', compact('name', 'task'));
 });
 
 Route::get('/about', function () {
