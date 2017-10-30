@@ -1,20 +1,27 @@
 @extends('layout')
 @section('content')
-    <div class="title m-b-md">
-        ¡ Hola {{ $name }} !
-    </div>
-    <hr>
+    <h1 class="title">
+        ¡ Hola chico !
+    </h1>
+    <h2 class="subtitle">Be prepared! These tasks are waiting for you!</h2>
     <div>
-        <h2>Be prepared! These tasks are waiting for you!</h2>
         <ul style="display: inline-block; text-align: left;">
             @foreach ($tasks as $task)
-                <li><a href="/tasks/{{ $task->id }}">{{ $task->body }}</a></li>
+                <li><a href="/tasks/task/{{ $task->id }}">{{ $task->title }}</a></li>
             @endforeach
         </ul>
     </div>
     <hr>
-    <div class="links">
-        <a href="/">Home</a>
-        <a href="/tasks/1">What's next?</a>
+    <div class="field is-grouped">
+        <div class="control">
+            <a class="button" href="/">Home</a>
+        </div>
+        <div class="control">
+            <a class="button" href="/tasks/task/1">What's next?</a>
+        </div>
+        <div class="control">
+            <a class="button" href="/tasks/create">Add new task</a>
+        </div>
     </div>
+    <hr>
 @endsection

@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-Route::get('/', 'TaskController@home');
-Route::get('/tasks', 'TaskController@index');
-Route::get('/tasks/{task}', 'TaskController@show');
+Route::get('/', 'TaskController@home')->name('home');
+Route::get('/tasks', 'TaskController@index')->name('tasks.list');
+Route::get('/tasks/task/{task}', 'TaskController@show')->name('tasks.show');
+Route::get('/tasks/create', 'TaskController@create')->name('task.create');
+Route::post('/tasks', 'TaskController@store')->name('task.store');
+Route::post('/tasks/task/{task}/step', 'StepController@store')->name('step.store');
